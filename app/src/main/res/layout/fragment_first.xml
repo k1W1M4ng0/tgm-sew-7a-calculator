@@ -97,24 +97,28 @@
             android:id="@+id/radio_plus"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginStart="8dp"
             android:text="@string/radio_plus" />
 
         <RadioButton
             android:id="@+id/radio_minus"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginStart="8dp"
             android:text="@string/radio_minus" />
 
         <RadioButton
             android:id="@+id/radio_multiply"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginStart="8dp"
             android:text="@string/radio_multiply" />
 
         <RadioButton
             android:id="@+id/radio_divide"
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:layout_marginStart="8dp"
             android:text="@string/radio_divide" />
     </LinearLayout>
 
