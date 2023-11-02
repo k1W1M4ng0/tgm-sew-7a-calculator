@@ -9,29 +9,39 @@
 
     <Button
         android:id="@+id/button_calculate"
+        style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Button"
+        android:background="#000000"
+        android:text="@string/button_calculate"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/button_ms"
         app:layout_constraintStart_toStartOf="@+id/edit_text_value2"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_value2" />
 
     <Button
         android:id="@+id/button_ms"
+        style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
-        android:text="Button"
+        android:background="#000000"
+        android:backgroundTint="#E64E4E"
+        android:text="@string/button_ms"
+        android:textColor="@android:color/holo_red_light"
         app:layout_constraintEnd_toStartOf="@+id/button_mr"
         app:layout_constraintTop_toTopOf="@+id/button_calculate" />
 
     <Button
         android:id="@+id/button_mr"
+        style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:text="Button"
+        android:background="#000000"
+        android:text="@string/button_mr"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_value2"
         app:layout_constraintTop_toTopOf="@+id/button_ms" />
 
@@ -41,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:text="TextView"
+        android:text="@string/text_solution"
         app:layout_constraintEnd_toEndOf="@+id/button_calculate"
         app:layout_constraintTop_toBottomOf="@+id/button_calculate" />
 
@@ -53,6 +63,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:hint="@string/text_hint_value1"
         android:inputType="numberSigned"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.83"
@@ -65,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="@string/text_hint_value2"
         android:inputType="numberSigned"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_value1"
         app:layout_constraintStart_toStartOf="@+id/edit_text_value1"
@@ -85,25 +97,25 @@
             android:id="@+id/radio_plus"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="RadioButton" />
+            android:text="@string/radio_plus" />
 
         <RadioButton
             android:id="@+id/radio_minus"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="RadioButton" />
+            android:text="@string/radio_minus" />
 
         <RadioButton
             android:id="@+id/radio_multiply"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="RadioButton" />
+            android:text="@string/radio_multiply" />
 
         <RadioButton
             android:id="@+id/radio_divide"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="RadioButton" />
+            android:text="@string/radio_divide" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

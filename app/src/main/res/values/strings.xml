@@ -7,6 +7,20 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="text_hint_value1">Wert 1</string>
+    <string name="text_hint_value2">Wert 2</string>
+    <string name="button_ms">MS</string>
+    <string name="button_mr">MR</string>
+    <string name="radio_plus">+</string>
+    <string name="radio_minus">-</string>
+    <string name="radio_multiply">*</string>
+    <string name="radio_divide">/</string>
+    <string name="button_calculate">Berechnen</string>
+    <string name="text_solution">Lösung</string>
+
+
+
+
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
