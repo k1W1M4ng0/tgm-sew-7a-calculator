@@ -1,5 +1,7 @@
 package at.ac.tgm.hit.sew7.sgao.calculator;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,6 +40,7 @@ public class FirstFragment extends Fragment {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -52,6 +55,7 @@ public class FirstFragment extends Fragment {
         });
 
         binding.editTextValue2.setOnTouchListener(new View.OnTouchListener() {
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
@@ -103,6 +107,21 @@ public class FirstFragment extends Fragment {
 
                     // set the solution field to the calculated value
                     binding.textSolution.setText(Double.toString(calculated));
+
+                    /*
+                    set the color:
+                    0: white
+                    positive: black
+                    negative: red
+                     */
+                    int color = Color.WHITE;
+                    if(calculated > 0) {
+                        color = Color.BLACK;
+                    }
+                    else if(calculated < 0) {
+                        color = Color.RED;
+                    }
+                    binding.textSolution.setTextColor(color);
                 }
             }
         });
