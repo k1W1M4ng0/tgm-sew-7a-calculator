@@ -84,10 +84,10 @@
         android:inputType="number|numberDecimal|numberSigned"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_value1"
         app:layout_constraintStart_toStartOf="@+id/edit_text_value1"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/radio_group_operators" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radio_group_operators"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
