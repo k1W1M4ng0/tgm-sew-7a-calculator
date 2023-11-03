@@ -9,11 +9,11 @@
 
     <Button
         android:id="@+id/button_calculate"
+        style="@style/Component.MyTheme.Button"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#C1C1C1"
         android:text="@string/button_calculate"
         android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/button_ms"
@@ -22,10 +22,10 @@
 
     <Button
         android:id="@+id/button_ms"
+        style="@style/Component.MyTheme.Button"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#C1C1C1"
         android:text="@string/button_ms"
         android:textColor="@android:color/holo_red_light"
         app:layout_constraintEnd_toStartOf="@+id/button_mr"
@@ -33,9 +33,9 @@
 
     <Button
         android:id="@+id/button_mr"
+        style="@style/Component.MyTheme.Button"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:backgroundTint="#C1C1C1"
         android:text="@string/button_mr"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_value2"

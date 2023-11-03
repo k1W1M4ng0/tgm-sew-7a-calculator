@@ -5,5 +5,10 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Calculator" parent="Base.Theme.Calculator" />
+    <style name="Theme.Calculator" parent="Base.Theme.Calculator" />"
+   <style name="Component.MyTheme.Button" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="backgroundTint">#C0C0C0</item>
+        <item name="cornerRadius">@null</item>
+   </style>
+
 </resources>
