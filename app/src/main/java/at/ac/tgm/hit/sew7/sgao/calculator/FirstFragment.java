@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -124,10 +126,17 @@ public class FirstFragment extends Fragment {
             String solutionString = binding.textSolution.getText().toString();
             Log.d("solstr", solutionString);
             try {
+                // parse the value
                 Float solution = Float.parseFloat(solutionString);
                 Log.d("sol", ""+solution);
+
+                // save it to shared preferences
                 editor.putFloat("solution", solution);
                 editor.apply();
+
+                // Snackbar
+                Snackbar.make(view1, getString(R.string.snackbar_saved), Snackbar.LENGTH_SHORT)
+                        .show();
             }
             catch(NumberFormatException ignored) {
 
