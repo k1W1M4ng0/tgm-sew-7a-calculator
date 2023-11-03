@@ -126,15 +126,4 @@
             android:text="@string/radio_divide" />
     </RadioGroup>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_value1"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_value1">
-
-    </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
