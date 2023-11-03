@@ -1,6 +1,8 @@
 package at.ac.tgm.hit.sew7.sgao.calculator;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -107,23 +109,38 @@ public class FirstFragment extends Fragment {
 
                     // set the solution field to the calculated value
                     binding.textSolution.setText(Double.toString(calculated));
+                    // set the color
+                    setSolutionColor(calculated);
 
-                    /*
-                    set the color:
-                    0: white
-                    positive: black
-                    negative: red
-                     */
-                    int color = Color.WHITE;
-                    if(calculated > 0) {
-                        color = Color.BLACK;
-                    }
-                    else if(calculated < 0) {
-                        color = Color.RED;
-                    }
-                    binding.textSolution.setTextColor(color);
                 }
             }
+        });
+
+        binding.buttonMs.setOnClickListener(view1 -> {
+            SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+
+            // get the text
+            String solutionString = binding.textSolution.getText().toString();
+            Log.d("solstr", solutionString);
+            try {
+                Float solution = Float.parseFloat(solutionString);
+                Log.d("sol", ""+solution);
+                editor.putFloat("solution", solution);
+                editor.apply();
+            }
+            catch(NumberFormatException ignored) {
+
+            }
+        });
+
+        binding.buttonMr.setOnClickListener(view1 -> {
+            SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+            float solution = sharedPref.getFloat("solution", 0);
+            // set the text
+            binding.textSolution.setText(Float.toString(solution));
+            // set the color
+            setSolutionColor(solution);
         });
     }
 
@@ -144,6 +161,24 @@ public class FirstFragment extends Fragment {
         int selectedID = binding.radioGroupOperators.getCheckedRadioButtonId();
 
         return operatorMap.getOrDefault(selectedID, Character.MIN_VALUE);
+    }
+
+    /**
+     * set the color:
+     * 0: white
+     * positive: black
+     * negative: red
+     * @param solution the solution
+     */
+    private void setSolutionColor(double solution) {
+        int color = Color.WHITE;
+        if(solution > 0) {
+            color = Color.BLACK;
+        }
+        else if(solution < 0) {
+            color = Color.RED;
+        }
+        binding.textSolution.setTextColor(color);
     }
 
 }
