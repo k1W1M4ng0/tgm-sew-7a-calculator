@@ -3,6 +3,7 @@ package at.ac.tgm.hit.sew7.sgao.calculator;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
@@ -39,6 +40,26 @@ public class FirstFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        binding.editTextValue1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    binding.editTextValue1.setText("");
+                }
+                return false;
+            }
+        });
+
+        binding.editTextValue2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                    binding.editTextValue2.setText("");
+                }
+                return false;
+            }
+        });
 
         binding.buttonCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
