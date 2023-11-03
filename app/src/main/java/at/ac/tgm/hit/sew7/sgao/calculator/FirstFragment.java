@@ -133,6 +133,12 @@ public class FirstFragment extends Fragment {
         binding = null;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d("onResume", "set the color to green");
+        binding.buttonCalculate.setBackgroundColor(Color.GREEN);
+    }
 
     private char getSelectedOperator() {
         int selectedID = binding.radioGroupOperators.getCheckedRadioButtonId();
