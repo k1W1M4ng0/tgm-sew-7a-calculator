@@ -76,52 +76,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/holo_red_light"
         android:ems="10"
         android:hint="@string/text_hint_value2"
-        android:backgroundTint="@android:color/holo_red_light"
         android:inputType="number|numberDecimal|numberSigned"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_value1"
         app:layout_constraintStart_toStartOf="@+id/edit_text_value1"
-        app:layout_constraintTop_toBottomOf="@+id/radio_group_operators" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_operators" />
 
-    <RadioGroup
-        android:id="@+id/radio_group_operators"
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/spinner_operators"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_value1"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/edit_text_value1"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_value1">
-
-        <RadioButton
-            android:id="@+id/radio_plus"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:text="@string/radio_plus" />
-
-        <RadioButton
-            android:id="@+id/radio_minus"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:text="@string/radio_minus" />
-
-        <RadioButton
-            android:id="@+id/radio_multiply"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:text="@string/radio_multiply" />
-
-        <RadioButton
-            android:id="@+id/radio_divide"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
-            android:text="@string/radio_divide" />
-    </RadioGroup>
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_value1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
