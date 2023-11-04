@@ -1,6 +1,5 @@
 package at.ac.tgm.hit.sew7.sgao.calculator;
 
-import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -9,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
-import androidx.core.view.WindowCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         }
         if(id == R.id.action_info) {
             String s = "Version ";
-            s += "placeholder"; // TODO
+            s += at.ac.tgm.hit.sew7.sgao.calculator.BuildConfig.VERSION_NAME;
             s += ", ";
             s += getString(R.string.author);
             Snackbar.make(calculatorView, s, Snackbar.LENGTH_SHORT)
