@@ -10,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -26,7 +28,7 @@ import at.ac.tgm.hit.sew7.sgao.calculator.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
-    private HashMap<Integer, Character> operatorMap = new HashMap<>();
+    private char selectedOperator;
 
     @Override
     public View onCreateView(
@@ -36,10 +38,6 @@ public class FirstFragment extends Fragment {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
 
-        operatorMap.put(binding.radioPlus.getId(), '+');
-        operatorMap.put(binding.radioMinus.getId(), '-');
-        operatorMap.put(binding.radioMultiply.getId(), '*');
-        operatorMap.put(binding.radioDivide.getId(), '/');
         return binding.getRoot();
 
     }
@@ -151,6 +149,22 @@ public class FirstFragment extends Fragment {
             // set the color
             setSolutionColor(solution);
         });
+
+        // change selectedOperator when an option from the spinner is selected
+        binding.spinnerOperators.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String s = adapterView.getItemAtPosition(i).toString();
+                if(s.length() > 0) {
+                    selectedOperator = s.charAt(0);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                selectedOperator = Character.MIN_VALUE;
+            }
+        });
     }
 
     @Override
@@ -167,9 +181,7 @@ public class FirstFragment extends Fragment {
     }
 
     private char getSelectedOperator() {
-        int selectedID = binding.radioGroupOperators.getCheckedRadioButtonId();
-
-        return operatorMap.getOrDefault(selectedID, Character.MIN_VALUE);
+        return this.selectedOperator;
     }
 
     /**

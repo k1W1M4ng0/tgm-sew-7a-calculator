@@ -11,10 +11,12 @@
     <string name="text_hint_value2">Wert 2</string>
     <string name="button_ms">MS</string>
     <string name="button_mr">MR</string>
-    <string name="radio_plus">+</string>
-    <string name="radio_minus">-</string>
-    <string name="radio_multiply">*</string>
-    <string name="radio_divide">/</string>
+    <string-array name="operators_array">
+        <item>+</item>
+        <item>-</item>
+        <item>*</item>
+        <item>/</item>
+    </string-array>
     <string name="button_calculate">Berechnen</string>
     <string name="text_solution">Lösung</string>
 
