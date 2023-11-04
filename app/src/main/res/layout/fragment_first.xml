@@ -78,6 +78,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/text_hint_value2"
+        android:backgroundTint="@android:color/holo_red_light"
         android:inputType="number|numberDecimal|numberSigned"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_value1"
         app:layout_constraintStart_toStartOf="@+id/edit_text_value1"
