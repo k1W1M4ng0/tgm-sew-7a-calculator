@@ -1,5 +1,6 @@
 package at.ac.tgm.hit.sew7.sgao.calculator;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -18,6 +19,8 @@ import at.ac.tgm.hit.sew7.sgao.calculator.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -61,9 +64,23 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        View calculatorView = findViewById(R.id.layout_calculator);
+        if(id == R.id.action_reset) {
+            EditText editText1 = (EditText)findViewById(R.id.edit_text_value1);
+            EditText editText2 = (EditText)findViewById(R.id.edit_text_value2);
+            TextView textViewSolution = (TextView)findViewById(R.id.text_solution);
+
+            editText1.setText("");
+            editText2.setText("");
+            textViewSolution.setText("");
+        }
+        if(id == R.id.action_info) {
+            String s = "Version ";
+            s += "placeholder"; // TODO
+            s += ", ";
+            s += getString(R.string.author);
+            Snackbar.make(calculatorView, s, Snackbar.LENGTH_SHORT)
+                    .show();
         }
 
         return super.onOptionsItemSelected(item);

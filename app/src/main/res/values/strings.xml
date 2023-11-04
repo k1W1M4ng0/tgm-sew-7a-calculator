@@ -20,8 +20,10 @@
 
     <string name="snackbar_saved">Gespeichert</string>
 
+    <string name="action_reset">Reset</string>
+    <string name="action_info">Info</string>
 
-
+    <string name="author">Simon Gao</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
